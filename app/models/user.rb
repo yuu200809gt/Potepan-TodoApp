@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
 
   def start_end_check
-    if end_date.present? && end_date < Date.today
+    if start_date > end_date
     errors.add(:end_date, "は開始日以降の日付で登録してください")
     end
   end
