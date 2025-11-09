@@ -1,0 +1,18 @@
+.Nav {
+    background-color: blueviolet;
+    height: 50px;
+    margin-bottom: 25px;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.nav_title {
+    margin: 0 auto;
+    color: #fff;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+}

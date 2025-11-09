@@ -1,0 +1,54 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag "users_index", "data-turbo-track": "reload" %>
+<% end %>
+
+<div class="Title">
+  <h2 class="Title_text">予定一覧</h2>
+  <%= link_to "新規追加", :new_user %>
+</div>
+
+  <div class="todo">
+  <table class="todoTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>タイトル</th>
+        <th>開始日</th>
+        <th>終了日</th>
+        <th>終日</th>
+        <th>更新日時</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.title %></td>
+          <td><%= user.start_date.strftime("%Y/%m/%d") %></td>
+          <td><%= user.end_date.strftime("%Y/%m/%d") %></td>
+          <td><%= user.all_day ? '○' : '' %></td>
+          <td><%= user.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+          <td>
+            <%= link_to "詳細", user %>
+          </td>
+          <td>
+            <%= link_to "編集", [:edit, user] %>
+          </td>
+          <td>
+            <%= link_to "削除", user_path(user), data: { turbo_method: :delete, turbo_confirm: "予定を削除しますか？" } %>
+          </td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+  </div>
+
+<div class="todo_total">
+  <h2 class="total_text">予定の合計 <%= User.count %> 件</h2>
+  <h6 class="today_date">本日の日付 <%= Date.current.strftime("%Y/%m/%d") %></h6>
+</div>
+
+<% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+<% end %>
