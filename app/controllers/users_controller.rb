@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(params.require(:user).permit(:title, :start_date, :end_date, :all_day, :memo))
+      @user.save
       flash[:notice] = "予定を更新しました"
       redirect_to :users
     else
