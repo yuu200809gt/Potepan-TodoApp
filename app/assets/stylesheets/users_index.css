@@ -1,0 +1,47 @@
+.Title {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    position: relative;
+    right: 300px;
+}
+
+.Title_text {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.todo {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+.todoTable {
+    background-color: #eeeeee;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.todoTable th, td {
+    padding: 10px 15px;
+}
+
+.todo_total {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 70px;
+    position: relative;
+    left: 150px;
+}
+
+.total_text {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.today_date {
+    font-weight: 400;
+    position: relative;
+    right: 300px;
+}

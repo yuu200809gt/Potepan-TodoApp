@@ -1,0 +1,39 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag "users_show", "data-turbo-track": "reload" %>
+<% end %>
+
+<p class="back_page"><%= link_to "← 一覧に戻る", :users %></p>
+
+<div class="Title">
+
+  <h2 class="Title_text"><%= @user.title %></h2>
+
+  <%= link_to "✎ 編集", [:edit, @user] %>
+
+</div>
+
+<div class="Form">
+<table>
+  
+  <tr>
+    <th>開始日</th>
+    <td><%= @user.start_date %></td>
+  </tr>
+
+  <tr>
+    <th>終了日</th>
+    <td><%= @user.end_date %></td>
+  </tr>
+
+  <tr>
+    <th>終日</th>
+    <td><%= @user.all_day ? '○' : '' %></td>
+  </tr>
+
+  <tr>
+    <th>スケジュールメモ</th>
+    <td><%= @user.memo %></td>
+  </tr>
+
+</table>
+</div>

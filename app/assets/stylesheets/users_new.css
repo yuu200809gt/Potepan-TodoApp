@@ -1,0 +1,17 @@
+.Title_text {
+    display: flex;
+    font-size: 22px;
+    font-weight: 700;
+    padding-left: 600px;
+    margin-bottom: 20px;
+}
+
+.Form {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    display: flex;
+    justify-content: space-around;
+}
